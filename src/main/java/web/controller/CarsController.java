@@ -21,16 +21,7 @@ public class CarsController {
 
     @GetMapping("/cars")
     public String carsByCount(@RequestParam(value = "count", defaultValue = "5") int count, ModelMap model) {
-
-        List<Car> cars = new ArrayList<>();
-
-        cars.add(new Car("Car 1", "car1", 1));
-        cars.add(new Car("Car 2", "car2", 2));
-        cars.add(new Car("Car 3", "car3", 3));
-        cars.add(new Car("Car 4", "car4", 4));
-        cars.add(new Car("Car 5", "car5", 5));
-
-        model.addAttribute("carsByCountAttribute", car.getCarsByCount(cars, count));
+        model.addAttribute("carsByCountAttribute", car.getCarsByCount(count));
         return "cars";
     }
 }
